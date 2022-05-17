@@ -1,0 +1,9 @@
+name: BetterNetheriteRewrite
+version: '${project.version}'
+main: com.abraxas.betternetheriterewrite.BetterNetheriteRewrite
+api-version: 1.18
+prefix: BetterNetherite
+load: STARTUP
+authors: [ Steel_Abraxas ]
+description: Step up Netherite by customizing how it works!
+website: https://www.spigotmc.org/resources/better-netherite.84526/

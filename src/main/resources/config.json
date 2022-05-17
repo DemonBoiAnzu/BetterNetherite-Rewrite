@@ -1,0 +1,34 @@
+{
+  "debug": true,
+  "settings": {
+    "chat_prefix": "&6Better&cNetherite &7» ",
+    "crafting_mode": "VANILLA",
+    "ancient_debris": {
+      "smelting": {
+        "yield": 4,
+        "time": 150,
+        "exp": 30,
+        "type": "BLAST_FURNACE"
+      },
+      "mining": {
+        "scrap_on_mine": {
+          "enabled": true,
+          "yield": 2,
+          "chance": 15
+        },
+        "ingot_on_mine": {
+          "enabled": true,
+          "yield": 1,
+          "chance": 3
+        }
+      }
+    },
+    "update_checking": {
+      "enabled": true,
+      "message": {
+        "reload": true,
+        "join": true
+      }
+    }
+  }
+}
