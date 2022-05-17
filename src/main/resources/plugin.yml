@@ -7,3 +7,7 @@ load: STARTUP
 authors: [ Steel_Abraxas ]
 description: Step up Netherite by customizing how it works!
 website: https://www.spigotmc.org/resources/better-netherite.84526/
+permissions:
+  betternetherite.admin:
+    description: Allows the user administrator permissions for Better Netherite.
+    default: op

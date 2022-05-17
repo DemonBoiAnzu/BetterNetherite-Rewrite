@@ -1,7 +1,7 @@
-package com.abraxas.betternetheriterewrite;
+package com.abraxas.betternetheriterewrite.utils;
 
+import com.abraxas.betternetheriterewrite.BetterNetheriteRewrite;
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 
 import java.util.Random;
@@ -29,11 +29,16 @@ public class Utils {
         main.getServer().getPluginManager().registerEvents(listener, main);
     }
 
-    public static boolean chanceOf(int chance){
+    public static boolean chanceOf(int chance) {
         return random.nextInt(chance) == 0;
     }
 
-    public static Random getRandom(){
+    public static Random getRandom() {
         return random;
+    }
+
+    public static void log(String message) {
+        var main = BetterNetheriteRewrite.getInstance();
+        main.getLogger().info(colorize(message));
     }
 }
