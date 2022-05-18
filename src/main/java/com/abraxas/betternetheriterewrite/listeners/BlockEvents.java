@@ -17,7 +17,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 
 import static com.abraxas.betternetheriterewrite.utils.Utils.getRandom;
 
-public class Blocks implements Listener {
+public class BlockEvents implements Listener {
     BetterNetheriteRewrite main = BetterNetheriteRewrite.getInstance();
 
     Config config = main.getConfiguration();

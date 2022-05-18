@@ -21,6 +21,7 @@ public class Config {
     BetterNetheriteRewrite main = BetterNetheriteRewrite.getInstance();
     String configPath = "%s/config.json".formatted(getInstance().getDataFolder());
     File configFile;
+
     public Config() {
         setDefaults();
         try {
@@ -31,10 +32,10 @@ public class Config {
     }
 
     void setDefaults() {
+        debugMode = false;
         pluginPrefix = "&6Better&cNetherite &7» ";
         craftingMode = CraftingMode.VANILLA;
 
-        updateChecking.options.put("enabled", true);
         updateChecking.options.put("message.reload", true);
         updateChecking.options.put("message.join", true);
 
@@ -90,8 +91,6 @@ public class Config {
         ancientDebris.setOption("mining.ingot_on_mine.chance", ancientDebrisIngotOnMineObject.get("chance").getAsInt());
 
         JsonObject updateCheckingObject = settingsObject.get("update_checking").getAsJsonObject();
-        updateChecking.setOption("enabled", updateCheckingObject.get("enabled").getAsBoolean());
-
         JsonObject updateCheckMessageObject = updateCheckingObject.get("message").getAsJsonObject();
         updateChecking.setOption("message.reload", updateCheckMessageObject.get("reload").getAsBoolean());
         updateChecking.setOption("message.join", updateCheckMessageObject.get("join").getAsBoolean());

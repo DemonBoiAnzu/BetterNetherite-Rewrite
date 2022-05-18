@@ -6,7 +6,7 @@
 
     <groupId>com.abraxas</groupId>
     <artifactId>better-netherite-rewrite</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.8</version>
     <packaging>jar</packaging>
 
     <name>Better Netherite Rewrite</name>
@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.3.1-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <phase>package</phase>

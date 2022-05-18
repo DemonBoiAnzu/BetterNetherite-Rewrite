@@ -24,7 +24,6 @@
       }
     },
     "update_checking": {
-      "enabled": true,
       "message": {
         "reload": true,
         "join": true
