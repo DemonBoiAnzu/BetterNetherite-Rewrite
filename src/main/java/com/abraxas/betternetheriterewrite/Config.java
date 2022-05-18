@@ -117,7 +117,7 @@ public class Config {
     }
 
     public enum SmeltType {
-        FURNACE, BLAST_FURNACE
+        FURNACE, BLAST_FURNACE, BOTH
     }
 
     public static class ConfigOption {

@@ -281,13 +281,31 @@ public class RecipeManager {
         removeRecipe("minecraft:netherite_scrap_from_blasting");
 
         var smeltType = Config.SmeltType.valueOf(config.ancientDebris.getStringOption("smelting.type"));
-        addSmeltingRecipe("netherite_scrap",
-                smeltType,
-                Material.NETHERITE_SCRAP,
-                config.ancientDebris.getIntOption("smelting.yield"),
-                Material.ANCIENT_DEBRIS,
-                config.ancientDebris.getIntOption("smelting.exp"),
-                config.ancientDebris.getIntOption("smelting.time"));
+        if (smeltType != Config.SmeltType.BOTH) {
+            addSmeltingRecipe("netherite_scrap",
+                    smeltType,
+                    Material.NETHERITE_SCRAP,
+                    config.ancientDebris.getIntOption("smelting.yield"),
+                    Material.ANCIENT_DEBRIS,
+                    config.ancientDebris.getIntOption("smelting.exp"),
+                    config.ancientDebris.getIntOption("smelting.time"));
+        } else {
+            addSmeltingRecipe("netherite_scrap",
+                    Config.SmeltType.FURNACE,
+                    Material.NETHERITE_SCRAP,
+                    config.ancientDebris.getIntOption("smelting.yield"),
+                    Material.ANCIENT_DEBRIS,
+                    config.ancientDebris.getIntOption("smelting.exp"),
+                    config.ancientDebris.getIntOption("smelting.time"));
+
+            addSmeltingRecipe("netherite_scrap_blasting",
+                    Config.SmeltType.BLAST_FURNACE,
+                    Material.NETHERITE_SCRAP,
+                    config.ancientDebris.getIntOption("smelting.yield"),
+                    Material.ANCIENT_DEBRIS,
+                    config.ancientDebris.getIntOption("smelting.exp"),
+                    config.ancientDebris.getIntOption("smelting.time"));
+        }
     }
 
     static void addSmithingRecipe(String key, ItemStack result, Material baseMat, ItemStack itemNeeded) {
