@@ -28,7 +28,7 @@ public final class BetterNetheriteRewrite extends JavaPlugin {
         CommandAPI.onEnable(this);
         config = new Config();
 
-        RecipeManager.RegisterRecipes();
+        RecipeManager.registerRecipes();
         Utils.registerEvents(new BlockEvents());
         Utils.registerEvents(new ServerEvents());
         Commands.register();

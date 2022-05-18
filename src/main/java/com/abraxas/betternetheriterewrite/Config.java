@@ -18,6 +18,7 @@ public class Config {
     public CraftingMode craftingMode;
     public ConfigOption updateChecking = new ConfigOption("update_checking");
     public ConfigOption ancientDebris = new ConfigOption("ancient_debris");
+    public ConfigOption improvedUpgrading = new ConfigOption("improved_upgrading_settings");
     BetterNetheriteRewrite main = BetterNetheriteRewrite.getInstance();
     String configPath = "%s/config.json".formatted(getInstance().getDataFolder());
     File configFile;
@@ -51,6 +52,13 @@ public class Config {
         ancientDebris.options.put("mining.ingot_on_mine.enabled", true);
         ancientDebris.options.put("mining.ingot_on_mine.yield", 1);
         ancientDebris.options.put("mining.ingot_on_mine.chance", 3);
+
+        improvedUpgrading.options.put("repair_on_upgrade", true);
+        improvedUpgrading.options.put("wood_to_stone_mat_req", 2);
+        improvedUpgrading.options.put("stone_to_iron_mat_req", 2);
+        improvedUpgrading.options.put("iron_to_diamond_mat_req", 2);
+        improvedUpgrading.options.put("iron_to_gold_mat_req", 2);
+        improvedUpgrading.options.put("diamond_to_netherite_mat_req", 2);
     }
 
     void loadConfig() throws Exception {
@@ -94,6 +102,14 @@ public class Config {
         JsonObject updateCheckMessageObject = updateCheckingObject.get("message").getAsJsonObject();
         updateChecking.setOption("message.reload", updateCheckMessageObject.get("reload").getAsBoolean());
         updateChecking.setOption("message.join", updateCheckMessageObject.get("join").getAsBoolean());
+
+        JsonObject improvedUpgradingObject = settingsObject.get("improved_upgrading_settings").getAsJsonObject();
+        improvedUpgrading.setOption("repair_on_upgrade", improvedUpgradingObject.get("repair_on_upgrade").getAsBoolean());
+        improvedUpgrading.setOption("wood_to_stone_mat_req", improvedUpgradingObject.get("wood_to_stone_mat_req").getAsInt());
+        improvedUpgrading.setOption("stone_to_iron_mat_req", improvedUpgradingObject.get("stone_to_iron_mat_req").getAsInt());
+        improvedUpgrading.setOption("iron_to_diamond_mat_req", improvedUpgradingObject.get("iron_to_diamond_mat_req").getAsInt());
+        improvedUpgrading.setOption("iron_to_gold_mat_req", improvedUpgradingObject.get("iron_to_gold_mat_req").getAsInt());
+        improvedUpgrading.setOption("diamond_to_netherite_mat_req", improvedUpgradingObject.get("diamond_to_netherite_mat_req").getAsInt());
     }
 
     public enum CraftingMode {

@@ -2,6 +2,7 @@ package com.abraxas.betternetheriterewrite.utils;
 
 import com.abraxas.betternetheriterewrite.BetterNetheriteRewrite;
 import net.md_5.bungee.api.ChatColor;
+import org.apache.commons.lang.WordUtils;
 import org.bukkit.event.Listener;
 
 import java.util.Random;
@@ -22,6 +23,10 @@ public class Utils {
             matcher = HEX_PATTERN.matcher(string);
         }
         return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
+    public static String formalizedString(String string) {
+        return WordUtils.capitalize(string.toLowerCase().replace("_", " "));
     }
 
     public static void registerEvents(Listener listener) {

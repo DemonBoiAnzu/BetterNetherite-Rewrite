@@ -15,12 +15,11 @@ public class RecipeManager {
 
     static Config config = main.getConfiguration();
 
-    public static void RegisterRecipes() {
+    public static void registerRecipes() {
         removeAllPluginRecipes();
         if (config.craftingMode == Config.CraftingMode.CRAFTING_TABLE)
             registerNetheriteItems();
-        else if (config.craftingMode == Config.CraftingMode.VANILLA ||
-                config.craftingMode == Config.CraftingMode.IMPROVED_VANILLA)
+        else if (config.craftingMode == Config.CraftingMode.IMPROVED_VANILLA)
             registerImprovedUpgradingSmithingTableItems();
 
         try {

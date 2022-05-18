@@ -18,7 +18,7 @@ public class Commands {
                         .executes((sender, args) -> {
                             try {
                                 config.loadConfig();
-                                RecipeManager.RegisterRecipes();
+                                RecipeManager.registerRecipes();
                                 UpdateChecker.checkForNewVersion();
                                 sender.sendMessage(Utils.colorize("%s&aSuccessfully reloaded the config!".formatted(config.pluginPrefix)));
 
@@ -31,6 +31,10 @@ public class Commands {
                                 sender.sendMessage(Utils.colorize("%s&cAn error occurred, please check console.".formatted(config.pluginPrefix)));
                             }
                         })
-                ).register();
+                )
+                .executes((sender, args) -> {
+                    sender.sendMessage(Utils.colorize("%s&aHere's a list of sub-commands:".formatted(config.pluginPrefix)));
+                    sender.sendMessage(Utils.colorize("&eReload &7- Reload the plugins configuration."));
+                }).register();
     }
 }

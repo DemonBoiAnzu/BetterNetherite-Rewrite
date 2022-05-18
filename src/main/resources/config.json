@@ -28,6 +28,14 @@
         "reload": true,
         "join": true
       }
+    },
+    "improved_upgrading_settings": {
+      "repair_on_upgrade": true,
+      "wood_to_stone_mat_req": 2,
+      "stone_to_iron_mat_req": 2,
+      "iron_to_diamond_mat_req": 2,
+      "iron_to_gold_mat_req": 2,
+      "diamond_to_netherite_mat_req": 2
     }
   }
 }
